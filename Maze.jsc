@@ -1,0 +1,39 @@
+@Java
+method move()
+{
+   if (!isWater(LEFT))
+   {
+      turn(LEFT);
+      hop();
+   }   
+   else if (!isWater(AHEAD))
+   {
+      hop();
+   }   
+   else
+   {
+      turn(RIGHT);
+      turn(RIGHT);
+   }
+}      
+         
+@@
+method main() 
+{ 
+
+   Jeroo Joe = new Jeroo(19,0);
+
+   while (!Joe.isFlower(HERE))
+   {  
+      if (!Joe.isWater(AHEAD) && !Joe.isWater(LEFT) && !Joe.isWater(RIGHT) && Joe.isFacing(SOUTH))
+      {
+         Joe.hop();
+         Joe.move();
+      }
+      else
+      {
+         Joe.move();
+      }    
+   }
+   Joe.pick();             
+}  

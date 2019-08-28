@@ -1,0 +1,56 @@
+@Java
+method checkFlower ()
+{
+    if (isFlower(HERE))
+    {
+       pick();
+    }  
+}
+
+method pickFlower ()
+{
+   while (!isWater(AHEAD))
+      { 
+         checkFlower();
+         if (!isWater(AHEAD)) 
+         { 
+            hop();
+         } 
+      }  
+}      
+
+method preventDeath ()
+{
+   if (isFacing(WEST))
+      {
+         turn(LEFT);
+         if (!isWater(AHEAD))
+         {
+            checkFlower();
+            hop();
+            turn(LEFT);
+         }   
+      }   
+      else if (isFacing(EAST))
+      {
+         turn(RIGHT);   
+         if (!isWater(AHEAD))
+         {
+            checkFlower();
+            hop();
+            turn(RIGHT);
+         }   
+      }   
+}      
+@@
+method main() 
+{ 
+
+   Jeroo Joe = new Jeroo();
+
+   while (!Joe.isWater(AHEAD))
+   {
+      Joe.pickFlower();
+      Joe.preventDeath();
+   }
+}  
