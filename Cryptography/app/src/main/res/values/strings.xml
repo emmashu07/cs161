@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Cryptography</string>
+    <string name="encryption1">Scytale Cipher</string>
+    <string name="encryption2">Vigenere Cipher</string>
+    <string name="encryption3">Caesar Cipher</string>
+    <string name="textInput">Encryption</string>
+</resources>
